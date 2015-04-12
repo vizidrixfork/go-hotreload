@@ -52,7 +52,7 @@ func (pm *processManager) killOnPort(showerr bool) {
 	pid, err := pm.getPid()
 	if err != nil {
 		if showerr {
-			logger.Error("Error while finding process to kill! " + err.Error())
+			logger.Debug("Cannot find process to kill! " + err.Error())
 		}
 		return
 	}
