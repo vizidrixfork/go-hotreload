@@ -53,9 +53,9 @@ func parseGlobs(paths []string) []string {
 		found, err := filepath.Glob(pattern)
 		if err != nil {
 			logger.Errorf("Error while converting patterns to paths. %q", err.Error())
+		} else {
+			allPaths = append(allPaths, found...)
 		}
-
-		allPaths = append(allPaths, found...)
 	}
 
 	return allPaths
