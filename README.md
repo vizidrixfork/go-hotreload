@@ -101,6 +101,15 @@ You can use environment variables inside your configurations.
 }
 ```
 
+#### - wildcard paths
+```
+{
+	"cmd": "go run main.go",
+	"watch": ["/some/path", "/some/other/**/*.go"],
+	"ignore": []
+}
+```
+
 # TODO
 - **tests**
 
