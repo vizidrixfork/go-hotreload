@@ -41,6 +41,9 @@ func main() {
 
 	loadConfiguration()
 
+	watch = parseGlobs(watch)
+	ignore = parseGlobs(ignore)
+
 	watch = convertAbsolutes(watch)
 	ignore = convertAbsolutes(ignore)
 

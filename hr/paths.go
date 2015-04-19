@@ -45,3 +45,18 @@ func convertAbsolutes(paths []string) []string {
 	}
 	return paths
 }
+
+func parseGlobs(paths []string) []string {
+	allPaths := []string{}
+
+	for _, pattern := range paths {
+		found, err := filepath.Glob(pattern)
+		if err != nil {
+			logger.Errorf("Error while converting patterns to paths. %q", err.Error())
+		}
+
+		allPaths = append(allPaths, found...)
+	}
+
+	return allPaths
+}
